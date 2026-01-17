@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emagrecer com Leveza</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #6BBF8E;
+      --bg: #F2F7F4;
+      --text: #2E2E2E;
+      --white: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .flex {
+      display: flex;
+      gap: 60px;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .reverse {
+      flex-direction: row-reverse;
+    }
+
+    img {
+      width: 100%;
+      max-width: 560px;
+      border-radius: 28px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+    }
+
+    .box {
+      background: var(--white);
+      border-radius: 30px;
+      margin-top: 60px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 30px auto 0;
+      padding: 16px 40px;
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 40px;
+      font-weight: 600;
+      transition: all 0.25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    ul {
+      list-style-position: inside;
+      padding: 0;
+    }
+
+    /* ===== VIDEO ===== */
+    .video-box iframe {
+      width: 100%;
+      max-width: 360px;
+      height: 640px;
+      border-radius: 24px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    }
+
+    /* ===== SLIDER ===== */
+    .slider-container {
+      position: relative;
+      overflow: hidden;
+      margin-top: 40px;
+    }
+
+    .slider {
+      display: flex;
+      gap: 30px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding: 20px;
+    }
+
+    .slider::-webkit-scrollbar {
+      display: none;
+    }
+
+    .testimonial {
+      min-width: 280px;
+      background: #fff;
+      border-radius: 26px;
+      padding: 25px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+    }
+
+    .testimonial img {
+      max-width: 200px;
+      margin-bottom: 15px;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      font-size: 32px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .arrow.left { left: 10px; }
+    .arrow.right { right: 10px; }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.6rem; }
+      img { max-width: 100%; }
+    }
+  </style>
+
+  <!-- Google Tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17759500883"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17759500883');
+  </script>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="flex">
+  <div>
+    <h1>Emagrecer com Leveza</h1>
+    <p>Um método simples para emagrecer sem sofrimento, culpa ou dietas restritivas.</p>
+    <a class="btn" href="https://pay.kiwify.com.br/dAjV06X?afid=iW2PAsaf">Quero começar agora</a>
+  </div>
+  <img src="https://www.spatzmedical.com/wp-content/uploads/2023/03/metodos-acompanhamento-do-emagrecimento.jpg">
+</section>
+
+<!-- VIDEO -->
+<section class="box video-box">
+  <h2>Conheça o método em vídeo</h2>
+  <iframe src="https://www.youtube.com/embed/78TaFxVUwb8" frameborder="0" allowfullscreen></iframe>
+</section>
+
+<!-- DORES -->
+<section class="box flex reverse">
+  <div>
+    <h2>Isso acontece com você?</h2>
+    <ul>
+      <li>❌ Dietas que não funcionam</li>
+      <li>😔 Efeito sanfona</li>
+      <li>🥗 Falta de constância</li>
+      <li>⏳ Desânimo</li>
+    </ul>
+  </div>
+  <img src="https://adrianacardoso.com.br/wp-content/uploads/2023/07/EMAGRECIMENTO.jpg">
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="box">
+  <h2>Histórias reais</h2>
+
+  <div class="slider-container">
+    <button class="arrow left" onclick="slideLeft()">‹</button>
+    <div class="slider" id="slider">
+      <div class="testimonial"><img src="Depoimento Simone.png"><p>“Minha saúde e autoestima mudaram.”</p><strong>Simone</strong></div>
+      <div class="testimonial"><img src="Depoimento Ana Clara.png"><p>“Eliminei mais de 6kg.”</p><strong>Ana Clara</strong></div>
+      <div class="testimonial"><img src="Depoimento catia.png"><p>“Ganhei consciência e saúde.”</p><strong>Catia</strong></div>
+      <div class="testimonial"><img src="Depoimento angela.png"><p>“-6kg em 60 dias.”</p><strong>Ângela</strong></div>
+      <div class="testimonial"><img src="Depoimento Juliane.png"><p>“A mudança foi absurda.”</p><strong>Juliane</strong></div>
+    </div>
+    <button class="arrow right" onclick="slideRight()">›</button>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="box">
+  <h2>Comece hoje</h2>
+  <p>Você não precisa sofrer para emagrecer.</p>
+  <a class="btn" href="https://pay.kiwify.com.br/dAjV06X?afid=iW2PAsaf">Quero emagrecer com leveza</a>
+</section>
+
+<script>
+  const slider = document.getElementById("slider");
+  function slideLeft() { slider.scrollLeft -= 300; }
+  function slideRight() { slider.scrollLeft += 300; }
+</script>
+
+</body>
+</html>
