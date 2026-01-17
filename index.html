@@ -37,39 +37,35 @@
 
     h2 {
       font-size: 2rem;
-      margin-bottom: 15px;
-    }
-
-    .flex {
-      display: flex;
-      gap: 60px;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .reverse {
-      flex-direction: row-reverse;
-    }
-
-    img {
-      width: 100%;
-      max-width: 560px;
-      border-radius: 28px;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+      margin-bottom: 25px;
     }
 
     .box {
       background: var(--white);
       border-radius: 30px;
       margin-top: 60px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .flex {
+      display: flex;
+      gap: 50px;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    img {
+      width: 100%;
+      max-width: 560px;
+      border-radius: 24px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.18);
     }
 
     .btn {
       display: inline-block;
       margin: 30px auto 0;
-      padding: 16px 40px;
+      padding: 18px 42px;
       background: var(--primary);
       color: #fff;
       text-decoration: none;
@@ -80,77 +76,57 @@
 
     .btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     }
 
-    ul {
-      list-style-position: inside;
-      padding: 0;
-    }
-
-    /* ===== VIDEO ===== */
+    /* === VIDEO === */
     .video-box iframe {
       width: 100%;
       max-width: 360px;
       height: 640px;
       border-radius: 24px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.25);
     }
 
-    /* ===== SLIDER ===== */
-    .slider-container {
-      position: relative;
-      overflow: hidden;
+    /* === DEPOIMENTOS === */
+    .slider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 25px;
       margin-top: 40px;
     }
 
-    .slider {
-      display: flex;
-      gap: 30px;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      padding: 20px;
-    }
-
-    .slider::-webkit-scrollbar {
+    .slide {
       display: none;
     }
 
-    .testimonial {
-      min-width: 280px;
-      background: #fff;
-      border-radius: 26px;
-      padding: 25px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+    .slide.active {
+      display: block;
     }
 
-    .testimonial img {
-      max-width: 200px;
-      margin-bottom: 15px;
+    .slide img {
+      max-width: 650px;
+      width: 100%;
+      border-radius: 18px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.25);
     }
 
-    .arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
+    .slider-btn {
       background: var(--primary);
       color: #fff;
       border: none;
-      font-size: 32px;
-      width: 48px;
-      height: 48px;
+      width: 55px;
+      height: 55px;
+      font-size: 30px;
       border-radius: 50%;
       cursor: pointer;
-      z-index: 10;
     }
-
-    .arrow.left { left: 10px; }
-    .arrow.right { right: 10px; }
 
     @media (max-width: 768px) {
       h1 { font-size: 2rem; }
       h2 { font-size: 1.6rem; }
-      img { max-width: 100%; }
+      .slide img { max-width: 95%; }
     }
   </style>
 
@@ -173,6 +149,7 @@
     <p>Um método simples para emagrecer sem sofrimento, culpa ou dietas restritivas.</p>
     <a class="btn" href="https://pay.kiwify.com.br/dAjV06X?afid=iW2PAsaf">Quero começar agora</a>
   </div>
+
   <img src="https://www.spatzmedical.com/wp-content/uploads/2023/03/metodos-acompanhamento-do-emagrecimento.jpg">
 </section>
 
@@ -182,74 +159,79 @@
   <iframe src="https://www.youtube.com/embed/78TaFxVUwb8" frameborder="0" allowfullscreen></iframe>
 </section>
 
-<!-- DORES -->
-<section class="box flex reverse">
-  <div>
-    <h2>Isso acontece com você?</h2>
-    <ul>
-      <li>❌ Dietas que não funcionam</li>
-      <li>😔 Efeito sanfona</li>
-      <li>🥗 Falta de constância</li>
-      <li>⏳ Desânimo</li>
-    </ul>
-  </div>
-  <img src="https://adrianacardoso.com.br/wp-content/uploads/2023/07/EMAGRECIMENTO.jpg">
+<!-- BENEFÍCIOS -->
+<section class="box">
+  <h2>Isso acontece com você?</h2>
+  <ul>
+    <li>❌ Dietas que não funcionam</li>
+    <li>😔 Efeito sanfona</li>
+    <li>🥗 Falta de constância</li>
+    <li>⏳ Desânimo</li>
+  </ul>
 </section>
 
 <!-- DEPOIMENTOS -->
 <section class="box">
-  <h2>Histórias reais</h2>
+  <h2>Resultados reais de quem já aplicou o método</h2>
 
-  <div class="slider-container">
-    <button class="arrow left" onclick="slideLeft()">‹</button>
-    <div class="slider" id="slider">
-      <div class="testimonial">
-  <img src="assets/img/simone.png" alt="Depoimento Simone">
-  <p>“Minha saúde e autoestima mudaram.”</p>
-  <strong>Simone</strong>
-</div>
+  <div class="slider">
+    <button class="slider-btn" onclick="prevSlide()">‹</button>
 
-<div class="testimonial">
-  <img src="assets/img/ana-clara.png" alt="Depoimento Ana Clara">
-  <p>“Eliminei mais de 6kg.”</p>
-  <strong>Ana Clara</strong>
-</div>
+    <div class="slide active">
+      <img src="assets/img/ana-clara.png.png">
+    </div>
 
-<div class="testimonial">
-  <img src="assets/img/catia.png" alt="Depoimento Catia">
-  <p>“Ganhei consciência e saúde.”</p>
-  <strong>Catia</strong>
-</div>
+    <div class="slide">
+      <img src="assets/img/angela.png.png">
+    </div>
 
-<div class="testimonial">
-  <img src="assets/img/angela.png" alt="Depoimento Angela">
-  <p>“-6kg em 60 dias.”</p>
-  <strong>Ângela</strong>
-</div>
+    <div class="slide">
+      <img src="assets/img/catia.png.png">
+    </div>
 
-<div class="testimonial">
-  <img src="assets/img/juliane.png" alt="Depoimento Juliane">
-  <p>“A mudança foi absurda.”</p>
-  <strong>Juliane</strong>
-</div>
-    <button class="arrow right" onclick="slideRight()">›</button>
+    <div class="slide">
+      <img src="assets/img/juliane.png.png">
+    </div>
+
+    <div class="slide">
+      <img src="assets/img/simone.png.png">
+    </div>
+
+    <button class="slider-btn" onclick="nextSlide()">›</button>
   </div>
 </section>
 
 <!-- CTA FINAL -->
 <section class="box">
-  <h2>Comece hoje</h2>
-  <p>Você não precisa sofrer para emagrecer.</p>
-  <a class="btn" href="https://pay.kiwify.com.br/dAjV06X?afid=iW2PAsaf">Quero emagrecer com leveza</a>
+  <h2>Você não precisa sofrer para emagrecer</h2>
+  <p>Comece hoje mesmo com um método simples, leve e possível.</p>
+  <a class="btn" href="https://pay.kiwify.com.br/dAjV06X?afid=iW2PAsaf">
+    Quero emagrecer com leveza
+  </a>
 </section>
 
 <script>
-  const slider = document.getElementById("slider");
-  function slideLeft() { slider.scrollLeft -= 300; }
-  function slideRight() { slider.scrollLeft += 300; }
+  let currentSlide = 0;
+  const slides = document.querySelectorAll(".slide");
+
+  function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove("active"));
+    slides[index].classList.add("active");
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  }
 </script>
 
 </body>
 </html>
+
 
 
